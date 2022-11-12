@@ -36,7 +36,7 @@ public class CourierTest {
     public void courierCanBeCreated(){
         ValidatableResponse responseCreate = courierClient.create(courier);
         ValidatableResponse responseLogin = courierClient.login(Credentials.from(courier));
-        id = responseLogin.extract().path("id");//key in json
+        id = responseLogin.extract().path("id");
         boolean isCourierCreated = responseCreate.extract().path("ok");
         int statusCode = responseCreate.extract().statusCode();
         System.out.println(statusCode);
